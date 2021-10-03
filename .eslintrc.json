@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
+        "es6": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -20,12 +20,8 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "max-len": ["error", { "code": 90 }],
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
       "react/react-in-jsx-scope": "off",
-      "import/no-extraneous-dependencies": {
-          "devDependencies": false
-      },
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -45,8 +41,7 @@
       "import/resolver": {
         "node": {
           "extensions": [".js", ".jsx", ".ts", ".tsx"]
-        },
-        "typescript": {}
+        }
       }
     }
-  }
+}
