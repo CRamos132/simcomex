@@ -1,14 +1,18 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Label from "../components/Label";
-import Link from "../components/Link";
 import TextInput from "../components/TextInput";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const Home: NextPage = () => {
   const { register, handleSubmit } = useForm();
   const router = useRouter();
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
+
   const onSubmit = (values: Record<string, string>) => {
     console.info(values);
     router.push("/home");
@@ -39,10 +43,27 @@ const Home: NextPage = () => {
           as="form"
           onSubmit={handleSubmit(onSubmit)}
           direction="column"
-          width="50%"
+          width="80%"
           gridRowGap="18px"
           alignItems="center"
         >
+          <Flex
+            direction="row"
+            gridColumnGap="24px"
+            width="100%"
+            justifyContent="space-between"
+          >
+            <Label htmlFor="name" label="Nome">
+              <TextInput placeholder="Nome" type="text" {...register("name")} />
+            </Label>
+            <Label htmlFor="lastname" label="Sobrenome">
+              <TextInput
+                placeholder="Sobrenome"
+                type="text"
+                {...register("lastname")}
+              />
+            </Label>
+          </Flex>
           <Label htmlFor="email" label="Email">
             <TextInput
               placeholder="Email"
@@ -51,20 +72,33 @@ const Home: NextPage = () => {
             />
           </Label>
           <Label htmlFor="password" label="Senha">
-            <TextInput
-              placeholder="Senha"
-              type="password"
-              {...register("password")}
-            />
+            <Flex direction="row" position="relative" width="100%">
+              <TextInput
+                placeholder="Senha"
+                type={show ? "text" : "password"}
+                {...register("password")}
+              />
+              <Button
+                h="1.75rem"
+                size="sm"
+                variant="ghost"
+                onClick={handleClick}
+                position="absolute"
+                right="1rem"
+                top="21%"
+              >
+                {show ? (
+                  <AiFillEyeInvisible size="1.2rem" />
+                ) : (
+                  <AiFillEye size="1.2rem" />
+                )}
+              </Button>
+            </Flex>
           </Label>
-          <Button type="submit" colorScheme="primary">
-            Entrar
+          <Button type="submit" colorScheme="orange">
+            Criar conta
           </Button>
-          <Link href="/">Esqueceu a senha?</Link>
         </Flex>
-        <Link href="/register" color="orange.300">
-          Não tem uma conta? Crie agora!
-        </Link>
       </Flex>
     </Box>
   );
