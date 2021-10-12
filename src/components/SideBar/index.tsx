@@ -119,14 +119,20 @@ export default function SideBar() {
               gridRowGap="24px"
               alignItems="flex-start"
             >
-              <Box width="100%">
+              <Flex
+                width="100%"
+                height="32px"
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+              >
                 <img
                   src="/logo-negative.png"
-                  width="auto"
-                  height="32px"
+                  width="200px"
+                  height="30px"
                   alt="simcomex"
                 />
-              </Box>
+              </Flex>
               <Button
                 leftIcon={<AiFillHome size="1.5rem" />}
                 variant="ghost"
