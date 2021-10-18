@@ -32,7 +32,7 @@ export default function SideBar() {
         width="100px"
         direction="column"
         backgroundColor="contrast.800"
-        position="relative"
+        position="absolute"
         padding="32px 18px"
         justifyContent="space-between"
       >
@@ -86,9 +86,6 @@ export default function SideBar() {
           {">"}
         </Button>
       </Flex>
-      <Button colorScheme="teal" onClick={onOpen}>
-        Open
-      </Button>
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent backgroundColor="contrast.800" height="100vh">
