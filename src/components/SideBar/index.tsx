@@ -22,9 +22,11 @@ import {
 } from "react-icons/bs";
 import { GoGraph } from "react-icons/go";
 import { FaCog } from "react-icons/fa";
+import { useRouter } from "next/dist/client/router";
 
 export default function SideBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { push } = useRouter();
   return (
     <>
       <Flex
@@ -40,7 +42,13 @@ export default function SideBar() {
           <Box width="100%">
             <img src="/logo-sm.png" width="79px" height="30px" alt="simcomex" />
           </Box>
-          <Button variant="ghost" color="white">
+          <Button
+            variant="ghost"
+            color="white"
+            onClick={() => {
+              push("/home");
+            }}
+          >
             <AiFillHome size="1.5rem" />
           </Button>
           <Button variant="ghost" color="white">
@@ -63,7 +71,13 @@ export default function SideBar() {
           <Button variant="ghost" color="white">
             <AiOutlineBell size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button
+            variant="ghost"
+            color="white"
+            onClick={() => {
+              push("/configuracao");
+            }}
+          >
             <FaCog size="1.5rem" />
           </Button>
           <Button variant="ghost" color="white">
@@ -134,6 +148,9 @@ export default function SideBar() {
                 leftIcon={<AiFillHome size="1.5rem" />}
                 variant="ghost"
                 color="white"
+                onClick={() => {
+                  push("/home");
+                }}
               >
                 Início
               </Button>
@@ -190,6 +207,9 @@ export default function SideBar() {
                 leftIcon={<FaCog size="1.5rem" />}
                 variant="ghost"
                 color="white"
+                onClick={() => {
+                  push("/configuracao");
+                }}
               >
                 Configurações
               </Button>
