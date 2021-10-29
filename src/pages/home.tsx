@@ -25,6 +25,7 @@ export default function Home() {
             alignItems="center"
             justifyContent="center"
             color="white"
+            fontWeight="bold"
           >
             Logo
           </Flex>
