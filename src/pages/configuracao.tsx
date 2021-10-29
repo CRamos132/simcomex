@@ -1,5 +1,4 @@
-import { Button } from "@chakra-ui/button";
-import { Flex, Box } from "@chakra-ui/layout";
+import { Flex, Box, Button } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { H1, H2 } from "../components/Heading";
 import Label from "../components/Label";

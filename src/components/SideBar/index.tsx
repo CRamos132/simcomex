@@ -68,7 +68,13 @@ export default function SideBar() {
           <Button variant="ghost" color="yellow">
             <BsPersonCircle size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button
+            variant="ghost"
+            color="white"
+            onClick={() => {
+              push("/fatura/new");
+            }}
+          >
             <AiOutlineBell size="1.5rem" />
           </Button>
           <Button
@@ -158,6 +164,9 @@ export default function SideBar() {
                 leftIcon={<AiOutlineBars size="1.5rem" />}
                 variant="ghost"
                 color="white"
+                onClick={() => {
+                  push("/fatura/new");
+                }}
               >
                 Fatura
               </Button>
