@@ -1,7 +1,6 @@
 import {
   Box,
   Drawer,
-  DrawerBody,
   DrawerOverlay,
   DrawerContent,
   Button,
@@ -20,13 +19,13 @@ import {
   BsPersonCircle,
   BsQuestionCircle,
 } from "react-icons/bs";
+import Link from "next/link";
+
 import { GoGraph } from "react-icons/go";
 import { FaCog } from "react-icons/fa";
-import { useRouter } from "next/dist/client/router";
 
 export default function SideBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { push } = useRouter();
   return (
     <>
       <Flex
@@ -34,62 +33,68 @@ export default function SideBar() {
         width="100px"
         direction="column"
         backgroundColor="contrast.800"
-        position="absolute"
+        position="fixed"
         padding="32px 18px"
         justifyContent="space-between"
       >
-        <Flex width="100%" direction="column" gridRowGap="24px">
+        <Flex width="100%" direction="column" gridRowGap="1.2rem">
           <Box width="100%">
             <img src="/logo-sm.png" width="79px" height="30px" alt="simcomex" />
           </Box>
           <Button
+            as="a"
             variant="ghost"
             color="white"
-            onClick={() => {
-              push("/home");
-            }}
+            href="/home"
+            // onClick={() => {
+            //   push("/home");
+            // }}
           >
             <AiFillHome size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <AiOutlineBars size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <BsPeople size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <GoGraph size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <BsGraphUp size="1.5rem" />
           </Button>
         </Flex>
-        <Flex width="100%" direction="column" gridRowGap="24px">
-          <Button variant="ghost" color="yellow">
+        <Flex width="100%" direction="column" gridRowGap="1.2rem">
+          <Button as="a" variant="ghost" color="yellow">
             <BsPersonCircle size="1.5rem" />
           </Button>
           <Button
+            as="a"
             variant="ghost"
             color="white"
-            onClick={() => {
-              push("/fatura/new");
-            }}
+            href="/fatura/new"
+            // onClick={() => {
+            //   push("/fatura/new");
+            // }}
           >
             <AiOutlineBell size="1.5rem" />
           </Button>
           <Button
+            as="a"
             variant="ghost"
             color="white"
-            onClick={() => {
-              push("/configuracao");
-            }}
+            href="/configuracao"
+            // onClick={() => {
+            //   push("/configuracao");
+            // }}
           >
             <FaCog size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <AiOutlineSearch size="1.5rem" />
           </Button>
-          <Button variant="ghost" color="white">
+          <Button as="a" variant="ghost" color="white">
             <BsQuestionCircle size="1.5rem" />
           </Button>
         </Flex>
@@ -133,7 +138,7 @@ export default function SideBar() {
             <Flex
               width="100%"
               direction="column"
-              gridRowGap="24px"
+              gridRowGap="1.2rem"
               alignItems="flex-start"
             >
               <Flex
@@ -151,26 +156,31 @@ export default function SideBar() {
                 />
               </Flex>
               <Button
+                as="a"
                 leftIcon={<AiFillHome size="1.5rem" />}
                 variant="ghost"
                 color="white"
-                onClick={() => {
-                  push("/home");
-                }}
+                href="/home"
+                // onClick={() => {
+                //   push("");
+                // }}
               >
                 Início
               </Button>
               <Button
+                as="a"
                 leftIcon={<AiOutlineBars size="1.5rem" />}
                 variant="ghost"
                 color="white"
-                onClick={() => {
-                  push("/fatura/new");
-                }}
+                href="/fatura/new"
+                // onClick={() => {
+                //   push("/fatura/new");
+                // }}
               >
                 Fatura
               </Button>
               <Button
+                as="a"
                 leftIcon={<BsPeople size="1.5rem" />}
                 variant="ghost"
                 color="white"
@@ -178,6 +188,7 @@ export default function SideBar() {
                 Pessoas
               </Button>
               <Button
+                as="a"
                 leftIcon={<GoGraph size="1.5rem" />}
                 variant="ghost"
                 color="white"
@@ -185,6 +196,7 @@ export default function SideBar() {
                 NCM
               </Button>
               <Button
+                as="a"
                 leftIcon={<BsGraphUp size="1.5rem" />}
                 variant="ghost"
                 color="white"
@@ -196,9 +208,10 @@ export default function SideBar() {
               alignItems="flex-start"
               width="100%"
               direction="column"
-              gridRowGap="24px"
+              gridRowGap="1.2rem"
             >
               <Button
+                as="a"
                 leftIcon={<BsPersonCircle size="1.5rem" />}
                 variant="ghost"
                 color="yellow"
@@ -206,6 +219,7 @@ export default function SideBar() {
                 Usuário
               </Button>
               <Button
+                as="a"
                 leftIcon={<AiOutlineBell size="1.5rem" />}
                 variant="ghost"
                 color="white"
@@ -213,16 +227,19 @@ export default function SideBar() {
                 Notificações
               </Button>
               <Button
+                as="a"
                 leftIcon={<FaCog size="1.5rem" />}
                 variant="ghost"
                 color="white"
-                onClick={() => {
-                  push("/configuracao");
-                }}
+                href="/configuracao"
+                // onClick={() => {
+                //   push("/configuracao");
+                // }}
               >
                 Configurações
               </Button>
               <Button
+                as="a"
                 leftIcon={<AiOutlineSearch size="1.5rem" />}
                 variant="ghost"
                 color="white"
@@ -230,6 +247,7 @@ export default function SideBar() {
                 Pesquisa
               </Button>
               <Button
+                as="a"
                 leftIcon={<BsQuestionCircle size="1.5rem" />}
                 variant="ghost"
                 color="white"

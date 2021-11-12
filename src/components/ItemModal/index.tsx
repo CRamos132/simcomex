@@ -24,6 +24,7 @@ export default function ItemModal({ isOpen, onClose, addItem }: IProps) {
   const onSubmit = (values: Item) => {
     console.info(values);
     addItem(values);
+    onClose();
   };
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -72,7 +73,7 @@ export default function ItemModal({ isOpen, onClose, addItem }: IProps) {
                 {...register("ncm_codigo")}
               />
             </Label>
-            <Label htmlFor="ncm_descicao" label="NCM Descrição">
+            <Label htmlFor="ncm_descricao" label="NCM Descrição">
               <TextInput
                 id="ncm_descicao"
                 placeholder="Descrição"
