@@ -41,15 +41,7 @@ export default function SideBar() {
           <Box width="100%">
             <img src="/logo-sm.png" width="79px" height="30px" alt="simcomex" />
           </Box>
-          <Button
-            as="a"
-            variant="ghost"
-            color="white"
-            href="/home"
-            // onClick={() => {
-            //   push("/home");
-            // }}
-          >
+          <Button as="a" variant="ghost" color="white" href="/home">
             <AiFillHome size="1.5rem" />
           </Button>
           <Button as="a" variant="ghost" color="white">
@@ -58,7 +50,7 @@ export default function SideBar() {
           <Button as="a" variant="ghost" color="white">
             <BsPeople size="1.5rem" />
           </Button>
-          <Button as="a" variant="ghost" color="white">
+          <Button as="a" href="/ncm/new" variant="ghost" color="white">
             <GoGraph size="1.5rem" />
           </Button>
           <Button as="a" variant="ghost" color="white">
@@ -69,26 +61,10 @@ export default function SideBar() {
           <Button as="a" variant="ghost" color="yellow">
             <BsPersonCircle size="1.5rem" />
           </Button>
-          <Button
-            as="a"
-            variant="ghost"
-            color="white"
-            href="/fatura/new"
-            // onClick={() => {
-            //   push("/fatura/new");
-            // }}
-          >
+          <Button as="a" variant="ghost" color="white" href="/fatura/new">
             <AiOutlineBell size="1.5rem" />
           </Button>
-          <Button
-            as="a"
-            variant="ghost"
-            color="white"
-            href="/configuracao"
-            // onClick={() => {
-            //   push("/configuracao");
-            // }}
-          >
+          <Button as="a" variant="ghost" color="white" href="/configuracao">
             <FaCog size="1.5rem" />
           </Button>
           <Button as="a" variant="ghost" color="white">
@@ -161,9 +137,6 @@ export default function SideBar() {
                 variant="ghost"
                 color="white"
                 href="/home"
-                // onClick={() => {
-                //   push("");
-                // }}
               >
                 Início
               </Button>
@@ -173,9 +146,6 @@ export default function SideBar() {
                 variant="ghost"
                 color="white"
                 href="/fatura/new"
-                // onClick={() => {
-                //   push("/fatura/new");
-                // }}
               >
                 Fatura
               </Button>
@@ -192,6 +162,7 @@ export default function SideBar() {
                 leftIcon={<GoGraph size="1.5rem" />}
                 variant="ghost"
                 color="white"
+                href="/ncm/new"
               >
                 NCM
               </Button>
